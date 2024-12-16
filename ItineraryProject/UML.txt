@@ -1,0 +1,112 @@
++----------------------------------+
+|            <<abstract>>          |
+|             Traveler             |
++----------------------------------+
+| - travelerID : String            |
+| - firstName : String             |
+| - lastName : String              |
++----------------------------------+
+| + getTravelerID() : String       |
+| + getFirstName() : String        |
+| + getLastName() : String         |
+| + setTravelerID(String) : void   |
+| + setFirstName(String) : void    |
+| + setLastName(String) : void     |
++----------------------------------+
+
+          ^
+          | Inherits
+          |
+
++----------------------------------+
+|          TravelPlanner            |
++----------------------------------+
+|                                  |
++----------------------------------+
+| + TravelPlanner(travelerID: String,
+|   firstName: String, lastName: String)
+| + createItinerary(startDate: String,
+|   endDate: String) : Itinerary
++----------------------------------+
+
+(1) Traveler <---- (1..*) Itinerary
+(1) Itinerary <---- (1..*) ItineraryDetail
+
++----------------------------------+
+|             Itinerary             |
++----------------------------------+
+| - itineraryID : String            |
+| - travelerID : String             |
+| - startDate : String              |
+| - endDate : String                |
++----------------------------------+
+| + Itinerary(itineraryID: String,  |
+|   travelerID: String,             |
+|   startDate: String,              |
+|   endDate: String)                |
+| + getItineraryID() : String       |
+| + getTravelerID() : String        |
+| + getStartDate() : String         |
+| + getEndDate() : String           |
+| + setItineraryID(String) : void   |
+| + setTravelerID(String) : void    |
+| + setStartDate(String) : void     |
+| + setEndDate(String) : void       |
++----------------------------------+
+
++----------------------------------+
+|          ItineraryDetail          |
++----------------------------------+
+| - itineraryID : String            |
+| - activityName : String           |
+| - startTime : String              |
+| - endTime : String                |
+| - activityCost : double           |
++----------------------------------+
+| + ItineraryDetail(itineraryID: String,
+|   activityName: String,
+|   startTime: String,
+|   endTime: String,
+|   activityCost: double)           |
+| + getItineraryID() : String       |
+| + getActivityName() : String      |
+| + getStartTime() : String         |
+| + getEndTime() : String           |
+| + getActivityCost() : double      |
+| + setItineraryID(String) : void   |
+| + setActivityName(String) : void  |
+| + setStartTime(String) : void     |
+| + setEndTime(String) : void       |
+| + setActivityCost(double) : void  |
++----------------------------------+
+
++----------------------------------+
+|           DataHandler             |
++----------------------------------+
+| - TRAVELER_FILE : String          |
+| - ITINERARY_FILE : String         |
+| - ITINERARY_DETAIL_FILE : String  |
+| - DELIM : char                    |
++----------------------------------+
+| + saveTraveler(t: Traveler) : void
+| + getTraveler(travelerID: String): Traveler* 
+| + updateTraveler(t: Traveler) : void
+| + saveItinerary(it: Itinerary) : void
+| + getItinerary(itineraryID: String): Itinerary*
+| + getItinerariesByTravelerID(travelerID: String) : List<Itinerary>
+| + updateItinerary(it: Itinerary) : void
+| + saveItineraryDetail(detail: ItineraryDetail) : void
+| + getItineraryDetails(itineraryID: String) : List<ItineraryDetail>
+| + removeItineraryDetail(itineraryID: String, activityName: String) : void
++----------------------------------+
+
++----------------------------------+
+|              MainApp              |
++----------------------------------+
+| - currentTraveler : TravelPlanner |
+| - currentItinerary : Itinerary    |
++----------------------------------+
+| + main(args: String[]) : int      |
+| + (Menu and I/O methods)          |
+| ... (Methods for user interaction)|
++----------------------------------+

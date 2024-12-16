@@ -1,0 +1,38 @@
+         +------------------+
+         |      User        |
+         +--------+---------+
+                  |
+                  | (1) Create Traveler & Itinerary
+                  |
+                  v
+        +--------------------+
+        |  Create Traveler   |
+        |  and Itinerary     |
+        +---------+----------+
+                  |
+                  | (2) Add Activities
+                  |
+                  v
+        +--------------------+
+        |  Add Activities    |
+        |  to Itinerary      |
+        +---------+----------+
+                  |
+        (6) Retrieve Traveler/Itinerary
+                  |
+                  v
+        +--------------------+
+        |  Retrieve Traveler |
+        |  & Itinerary Info  |
+        +---------+----------+
+                  |
+        (3) Update Itinerary Dates
+        (4) Add More Activities
+        (5) Remove Activity
+                  |
+                  v
+        +--------------------+
+        |  Update Itinerary  |
+        |  & Activities      |
+        +--------------------+
+
